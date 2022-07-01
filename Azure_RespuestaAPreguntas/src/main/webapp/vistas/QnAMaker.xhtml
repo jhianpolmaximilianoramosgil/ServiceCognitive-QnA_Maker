@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./Plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+    <ui:define name="content">
+        <h:head>
+            <title>PREGUNTAS Y RESPUESTAS</title>
+        </h:head>
+
+        <p:growl id="msg" severity="info,warn,fatal" showSummary="true" showDetail="true">
+            <p:autoUpdate/>
+        </p:growl>
+
+        <h:body>
+            <h:form> 
+                <p:card style="height:1%;max-width:95%; background:#D7D8D9;"> 
+                    <center>     <h3 style="color:black; font-weight:bold; font-size:60px"> AZURE - RESPUESTA A PREGUNTAS</h3></center>
+                </p:card> 
+                <br/>       <br/>        <br/>        <br/>        <br/>
+            </h:form>
+            <center> 
+                <p:panelGrid columns="2" > 
+                    <h:form> 
+                        <p:card style="width:25em; background:#FFCDD2;">
+                            <center> 
+
+                                <p:outputLabel value="QnA MARKER"  style="font-size:35px; font-weight:bold"/>
+                            </center>
+                            <f:facet name="footer">
+                                <p:graphicImage name="/images/MAKERQnA.jpg" style="width:320px;height:230px;"/>
+                            </f:facet>
+                        </p:card>
+                    </h:form>
+                    <h:form id="form">
+                        <center>
+                            <div class="container">
+                                <br/>
+                                <p:outputLabel style="color:black; font-weight:bold; font-size:40px" value="HAS TU PREGUNTA"/>
+                                <br/><br/>
+                                <p:inputText id="pregunta" value="#{qnaC.modelo.PREGUNTA}"  placeholder="Escribe tu pregunta"  required="true" requiredMessage="Ingresa tu Pregunta" 
+                                             style="width: 500px">
+                                       <p:tooltip for="pregunta" value="Escribe tu pregunta" trackMouse="focus"/>
+                                    <p:ajax listener="#{qnaC.obtenerDatosPregunta()}" update="form msg"/>
+                                </p:inputText>   
+                                <br/><br/>
+                                <br/><br/>
+                                <p:panelGrid columns="2" >
+                                    <p:outputLabel value="RESPUESTA  " style="font-size:25px; font-weight:bold"/>
+                                    <p:outputLabel id="RESPUESTA" value="#{qnaC.modelo.RESPUESTA}"/>
+                                    <p:outputLabel value="ID  " style="font-size:25px; font-weight:bold"/>
+                                    <p:outputLabel id="ID" value="#{qnaC.modelo.ID}"/>
+                                    <p:outputLabel value="PUNTAJE  " style="font-size:25px; font-weight:bold"/>
+                                    <p:outputLabel id="PUNTAJE" value="#{qnaC.modelo.PUNTAJE}"/>
+                                    <p:outputLabel value="FUENTE      " style="font-size:25px; font-weight:bold"/>
+                                    <p:outputLabel id="FUENTE" value="#{qnaC.modelo.FUENTE}"/>
+                                </p:panelGrid>
+                            </div>
+                        </center>
+                    </h:form>
+                </p:panelGrid>
+            </center>
+        </h:body>
+    </ui:define>
+</ui:composition>
