@@ -1,5 +1,5 @@
 # ServiceCognitive-QnA_Maker
-Servicio Cognitivo de Azure, implementado para dar respuesta a preguntas que haces dentro de la categoría de los datos que hayas puesto, generando la Api desde Azure para consumirlo en Java
+Servicio Cognitivo de Azure, implementado para dar respuesta a preguntas que haces dentro de la categoría de los datos que se encuentren en la API, más la Api se genera desde Azure para consumirlo en Java
 
 **1. Cognitive Services**
 <img src ="https://www.enmilocalfunciona.io/content/images/2018/07/cognitive-logo.jpg" align="right" style="width: 200px"/>
