@@ -15,6 +15,8 @@ Servicio Cognitivo de Azure, implementado para dar respuesta a preguntas que hac
 - Server: Payara Server 5.201
 - Frameworks: Javaserver Faces JSF 2.3
 - Componente: Primefaces 11.0.0
+- Proyecto : Clean
+
 
 **3. Maven Dependencias:**
 <img src ="http://javadesde0.com/wp-content/uploads/apache-maven.png" align="right" style="width: 200px"/>
